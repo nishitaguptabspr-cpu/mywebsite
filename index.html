@@ -7,7 +7,7 @@
 <style>
 body{
   margin:0;
-  font-family:Arial, sans-serif;
+  font-family:Arial;
   overflow:hidden;
   background:#ffb6c1;
 }
@@ -15,32 +15,16 @@ body{
 .slide{
   display:none;
   height:100vh;
-  width:100%;
   position:absolute;
-  top:0;
-  left:0;
+  width:100%;
   justify-content:center;
   align-items:center;
   flex-direction:column;
   text-align:center;
 }
 
-.slide.active{
+.active{
   display:flex;
-}
-
-.cake{
-  font-size:90px;
-}
-
-.flame{
-  font-size:40px;
-  animation:flicker 0.6s infinite alternate;
-}
-
-@keyframes flicker{
-  from{opacity:1;}
-  to{opacity:0.3;}
 }
 
 button{
@@ -49,75 +33,52 @@ button{
   border-radius:25px;
   background:#ff1493;
   color:white;
-  font-size:16px;
   margin-top:20px;
-  cursor:pointer;
 }
 
 img{
   width:220px;
   border-radius:20px;
-  margin-top:20px;
-  box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
 </style>
 </head>
 
 <body>
 
-<!-- Slide 1 -->
-<div class="slide active" id="slide1">
-  <div class="flame" id="flame">🕯️</div>
-  <div class="cake">🎂</div>
-  <h2>Click to Blow the Candle</h2>
-  <button onclick="blowCandle()">Blow Candle 💨</button>
+<div class="slide active">
+  <h2>🕯️ Blow the Candle</h2>
+  <div style="font-size:80px;">🎂</div>
+  <button onclick="nextSlide()">Blow 💨</button>
 </div>
 
-<!-- Slide 2 -->
-<div class="slide" id="slide2">
-  <h1>🎉 Celebration Time 🎉</h1>
-  <h2>🎂 Happy Birthday 🎂</h2>
+<div class="slide">
+  <h1>🎉 Happy Birthday 🎉</h1>
   <button onclick="nextSlide()">Next ➡</button>
 </div>
 
-<!-- Slide 3 -->
-<div class="slide" id="slide3">
-  <h1>💖 Special Message 💖</h1>
-  <img src="n.jpg" alt="Birthday Photo">
-  <p>
-    You are amazing 💕<br>
-    May your life be full of happiness ✨
-  </p>
+<div class="slide">
+  <h2>💖 Special Message 💖</h2>
+  <img src="PASTE-YOUR-IMAGE-LINK-HERE">
+  <p>You are amazing 💕</p>
   <button onclick="restart()">Start Again 🔁</button>
 </div>
 
 <script>
-let slides = document.querySelectorAll(".slide");
-let current = 0;
-
-function blowCandle(){
-  document.getElementById("flame").style.display="none";
-  setTimeout(nextSlide,1000);
-}
+let slides=document.querySelectorAll(".slide");
+let current=0;
 
 function nextSlide(){
   slides[current].classList.remove("active");
   current++;
-  if(current >= slides.length){
-    current = 0;
-  }
   slides[current].classList.add("active");
 }
 
 function restart(){
   slides[current].classList.remove("active");
-  current = 0;
+  current=0;
   slides[current].classList.add("active");
-  document.getElementById("flame").style.display="block";
 }
 </script>
 
 </body>
 </html>
-
-
