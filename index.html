@@ -12,7 +12,6 @@ body{
   background:#ffb6c1;
 }
 
-/* Slides */
 .slide{
   display:none;
   height:100vh;
@@ -30,19 +29,18 @@ body{
   display:flex;
 }
 
-/* Cake */
 .cake{
-  font-size:80px;
+  font-size:90px;
 }
 
 .flame{
   font-size:40px;
-  animation:flicker 0.5s infinite alternate;
+  animation:flicker 0.6s infinite alternate;
 }
 
 @keyframes flicker{
-  from{ opacity:1; }
-  to{ opacity:0.4; }
+  from{opacity:1;}
+  to{opacity:0.3;}
 }
 
 button{
@@ -53,13 +51,14 @@ button{
   color:white;
   font-size:16px;
   margin-top:20px;
+  cursor:pointer;
 }
 
-/* Photo */
 img{
-  width:200px;
+  width:220px;
   border-radius:20px;
-  margin-top:15px;
+  margin-top:20px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
 </style>
 </head>
@@ -67,7 +66,7 @@ img{
 <body>
 
 <!-- Slide 1 -->
-<div class="slide active">
+<div class="slide active" id="slide1">
   <div class="flame" id="flame">🕯️</div>
   <div class="cake">🎂</div>
   <h2>Click to Blow the Candle</h2>
@@ -75,18 +74,18 @@ img{
 </div>
 
 <!-- Slide 2 -->
-<div class="slide">
+<div class="slide" id="slide2">
   <h1>🎉 Celebration Time 🎉</h1>
   <h2>🎂 Happy Birthday 🎂</h2>
   <button onclick="nextSlide()">Next ➡</button>
 </div>
 
 <!-- Slide 3 -->
-<div class="slide">
+<div class="slide" id="slide3">
   <h1>💖 Special Message 💖</h1>
-  <img src="n.jpg" alt="Birthday Photo">
+  <img src="photo.jpg" alt="Birthday Photo">
   <p>
-    You are amazing 💕 <br>
+    You are amazing 💕<br>
     May your life be full of happiness ✨
   </p>
   <button onclick="restart()">Start Again 🔁</button>
@@ -98,14 +97,15 @@ let current = 0;
 
 function blowCandle(){
   document.getElementById("flame").style.display="none";
-  setTimeout(function(){
-    nextSlide();
-  },1000);
+  setTimeout(nextSlide,1000);
 }
 
 function nextSlide(){
   slides[current].classList.remove("active");
   current++;
+  if(current >= slides.length){
+    current = 0;
+  }
   slides[current].classList.add("active");
 }
 
