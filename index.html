@@ -8,9 +8,15 @@ body{
   margin:0;
   overflow:hidden;
   background:pink;
-}
-.slide{
-  display:flex;
+
+}.slide{
+  display:none;   /* hide all slides */
+  height:100vh;
+  width:100%;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
 }
 
 .slide{
@@ -107,7 +113,7 @@ h1{
 </audio>
 
 <!-- Slide 1 -->
-<div id="slide1" class="slide active">
+<div id="slide1" class="slide active"><style="display:flex;">
   <h1>💗 Make A Wish 💗</h1>
   
   <div id="cake" class="cake">🎂</div>
@@ -115,7 +121,7 @@ h1{
 </div>
 
 <!-- Slide 2 -->
-<div id="slide2" class="slide active">
+<div id="slide2" class="slide ">
 
   <h1 class="celebrate">🎉 Happy Birthday Amannnnnnnnnnn 🎉</h1>
   <p class="celebrate">🎊 Celebration Time 🎊</p>
@@ -123,7 +129,7 @@ h1{
 </div>
 
 <!-- Slide 3 -->
-<div id="slide3" class="slide active">
+<div id="slide3" class="slide">
 
   <!-- Teddy with cake GIF -->
   <img class="teddy"
@@ -163,6 +169,7 @@ function nextSlide(){
 </body>
 </html>
 </html>
+
 
 
 
