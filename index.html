@@ -6,24 +6,26 @@
 <style>
 body{
   margin:0;
-  padding:0;
-  text-align:center;
-  font-family: 'Comic Sans MS', cursive;
-  background: linear-gradient(to bottom,#ffe0f0,#ffc0dd);
+  overflow:hidden;
+  background:pink;
+}
+
+.container{
+  display:flex;          /* THIS IS IMPORTANT */
+  width:300%;
+  height:100vh;
+  transition:0.6s;
 }
 
 .slide{
-  display:none;
-  padding:25px;
-
-}
-
-  .container{
+  width:100vw;
+  height:100vh;
+  flex-shrink:0;
   display:flex;
-  width:300%;
-  transition:transform 0.6s ease-in-out;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
 }
-
 .slide{
   width:100vw;
   height:100vh;
@@ -162,5 +164,6 @@ function nextSlide(){
 </body>
 </html>
 </html>
+
 
 
