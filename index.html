@@ -4,11 +4,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Birthday Slides</title>
 
-}
 <style>
 body{
   margin:0;
-  font-family:'Comic Sans MS', cursive;
+  font-family:Arial, sans-serif;
   overflow:hidden;
   background:#ffb6c1;
 }
@@ -20,6 +19,7 @@ body{
   position:absolute;
   top:0;
   left:0;
+  display:flex;
   justify-content:center;
   align-items:center;
   flex-direction:column;
@@ -31,10 +31,6 @@ body{
   display:flex;
 }
 
-h1{
-  font-size:28px;
-}
-
 button{
   padding:12px 25px;
   border:none;
@@ -43,85 +39,26 @@ button{
   color:white;
   font-size:16px;
   margin-top:20px;
-}
-
-.card{
-  background:white;
-  color:#c2185b;
-  padding:20px;
-  border-radius:15px;
-  width:80%;
-  max-width:300px;
-}
-</style>
-.slide{
-  display:none;
-  height:100vh;
-  width:100%;
-  position:absolute;
-  top:0;
-  left:0;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  text-align:center;
-  color:black;
-}
-
-.active{
-  display:flex;
-}
-
-h1{
-  font-size:28px;
-}
-
-button{
-  padding:12px 25px;
-  border:none;
-  border-radius:25px;
-  background:#ff1493;
-  color:white;
-  font-size:16px;
-  margin-top:20px;
-}
-
-.card{
-  background:white;
-  color:#ff1493;
-  padding:20px;
-  border-radius:15px;
-  width:80%;
-  max-width:300px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Slide 1 -->
 <div class="slide active">
   <h1>💖 Make A Wish 💖</h1>
   <h2>🎂 Happy Birthday 🎂</h2>
   <button onclick="nextSlide()">Next ➡</button>
 </div>
 
-<!-- Slide 2 -->
 <div class="slide">
   <h1>🎉 Celebration Time 🎉</h1>
   <button onclick="nextSlide()">Next ➡</button>
 </div>
 
-<!-- Slide 3 -->
 <div class="slide">
-  <div class="card">
-    <h2>💌 Special Message 💌</h2>
-    <p>
-      You are amazing 💖<br>
-      Stay happy always ✨<br>
-      Keep shining 🌟
-    </p>
-  </div>
+  <h1>💌 Special Message 💌</h1>
+  <p>You are amazing. Stay happy always! ✨</p>
   <button onclick="nextSlide()">Start Again 🔁</button>
 </div>
 
@@ -141,5 +78,3 @@ function nextSlide(){
 
 </body>
 </html>
-
-
