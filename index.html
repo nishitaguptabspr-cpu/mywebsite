@@ -12,14 +12,18 @@ body{
   background: linear-gradient(to bottom,#ffe0f0,#ffc0dd);
 }
   body{
-  margin:0;
-  padding:0;
-  text-align:center;
-  font-family:'Comic Sans MS', cursive;
-  background:linear-gradient(to bottom, pink, lightpink);
-  overflow:hidden;
-  position:relative;
+  .slide{
+  display:none;
   height:100vh;
+  width:100%;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+.active{
+  display:flex;
+}
   }
 
 button{
@@ -91,7 +95,7 @@ h1{
 </audio>
 
 <!-- Slide 1 -->
-<div class="slide" style="display:flex;">
+  <div class="slide active">style="display:flex;">
   <h1>💗 Make A Wish 💗</h1>
   
   <div id="cake" class="cake">🎂</div>
@@ -141,6 +145,21 @@ function blowCandle(){
 function nextSlide(){
   document.getElementById("slide2").classList.remove("active");
   document.getElementById("slide3").classList.add("active");
+?test=123
+  <script>
+let slides = document.querySelectorAll(".slide");
+let current = 0;
+
+function nextSlide(){
+  slides[current].classList.remove("active");
+  current++;
+  if(current >= slides.length){
+    current = 0;
+  }
+  slides[current].classList.add("active");
+<button onclick="nextSlide()">Next</button>
+}
+</script>
 }
 </script>
 
