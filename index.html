@@ -8,34 +8,29 @@
 body{
   margin:0;
   font-family:Arial, sans-serif;
-  overflow:hidden;
-  background:#ffb6c1;
+  scroll-behavior:smooth;
 }
-.slide{
-  display:none;
+
+.section{
   height:100vh;
-  width:100%;
-  position:absolute;
-  top:0;
-  left:0;
+  display:flex;
   justify-content:center;
   align-items:center;
   flex-direction:column;
   text-align:center;
-  color:#c2185b;
+  color:white;
 }
 
-
-.active{
-  display:flex;
-}
+#slide1{ background:#ff6b81; }
+#slide2{ background:#ff4757; }
+#slide3{ background:#e84393; }
 
 button{
   padding:12px 25px;
   border:none;
   border-radius:25px;
-  background:#ff1493;
-  color:white;
+  background:white;
+  color:#e84393;
   font-size:16px;
   margin-top:20px;
 }
@@ -43,52 +38,22 @@ button{
 </head>
 
 <body>
-<slide 1>
-<div class="slide active">
+
+<div class="section" id="slide1">
   <h1>💖 Make A Wish 💖</h1>
-  <h2>🎂 Happy Birthday 🎂</h2>
-  <button onclick="nextSlide()">Next ➡</button>
+  <a href="#slide2"><button>Next ➡</button></a>
 </div>
 
-<div class="slide 2">
+<div class="section" id="slide2">
+  <h1>🎂 Happy Birthday 🎂</h1>
+  <a href="#slide3"><button>Next ➡</button></a>
+</div>
+
+<div class="section" id="slide3">
   <h1>🎉 Celebration Time 🎉</h1>
-  <button onclick="nextSlide()">Next ➡</button>
+  <p>You are amazing! Stay happy always ✨</p>
+  <a href="#slide1"><button>Start Again 🔁</button></a>
 </div>
-
-<div class="slide 3">
-  <h1>💌 Special Message 💌</h1>
-  <p>You are amazing. Stay happy always! ✨</p>
-  <button onclick="nextSlide()">Start Again 🔁</button>
-</div>
-
-<script>
-let slides = document.querySelectorAll(".slide");
-let current = 0;
-
-function nextSlide(){
-  slides[current].classList.remove("active");
-  current++;
-
-  if(current >= slides.length){
-    current = 0;
-  }
-
-  slides[current].classList.add("active");
-}
-</script>
-
-function nextSlide(){
-  slides[current].classList.remove("active");
-  current++;
-  if(current >= slides.length){
-    current = 0;
-  }
-  slides[current].classList.add("active");
-}
-</script>
 
 </body>
 </html>
-
-
-
