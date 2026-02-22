@@ -4,14 +4,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Birthday Slides</title>
 
+}
 <style>
 body{
   margin:0;
   font-family:'Comic Sans MS', cursive;
   overflow:hidden;
-  background:linear-gradient(to bottom, #ffb6c1, #ff69b4);
+  background:#ffb6c1;
 }
 
+.slide{
+  display:none;
+  height:100vh;
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  color:#c2185b;
+}
+
+.active{
+  display:flex;
+}
+
+h1{
+  font-size:28px;
+}
+
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:25px;
+  background:#ff1493;
+  color:white;
+  font-size:16px;
+  margin-top:20px;
+}
+
+.card{
+  background:white;
+  color:#c2185b;
+  padding:20px;
+  border-radius:15px;
+  width:80%;
+  max-width:300px;
+}
+</style>
 .slide{
   display:none;
   height:100vh;
@@ -99,4 +141,5 @@ function nextSlide(){
 
 </body>
 </html>
+
 
