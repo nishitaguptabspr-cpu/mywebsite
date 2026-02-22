@@ -2,12 +2,11 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday</title>
+<title>Birthday Slides</title>
 
 <style>
 body{
   margin:0;
-  padding:0;
   font-family:'Comic Sans MS', cursive;
   overflow:hidden;
   background:linear-gradient(to bottom, #ffb6c1, #ff69b4);
@@ -31,6 +30,10 @@ body{
   display:flex;
 }
 
+h1{
+  font-size:28px;
+}
+
 button{
   padding:12px 25px;
   border:none;
@@ -39,7 +42,6 @@ button{
   color:white;
   font-size:16px;
   margin-top:20px;
-  cursor:pointer;
 }
 
 .card{
@@ -57,28 +59,28 @@ button{
 
 <!-- Slide 1 -->
 <div class="slide active">
-  <h2>💖 Make A Wish 💖</h2>
-  <h1>🎂 Happy Birthday 🎂</h1>
+  <h1>💖 Make A Wish 💖</h1>
+  <h2>🎂 Happy Birthday 🎂</h2>
   <button onclick="nextSlide()">Next ➡</button>
 </div>
 
 <!-- Slide 2 -->
 <div class="slide">
-  <h2>🎉 Celebration Time 🎉</h2>
+  <h1>🎉 Celebration Time 🎉</h1>
   <button onclick="nextSlide()">Next ➡</button>
 </div>
 
 <!-- Slide 3 -->
 <div class="slide">
   <div class="card">
-    <h3>💌 Special Message 💌</h3>
+    <h2>💌 Special Message 💌</h2>
     <p>
-      You are my best friend and favorite human 💖<br>
-      I wish you unlimited happiness and success ✨<br>
-      Stay amazing! 🌈
+      You are amazing 💖<br>
+      Stay happy always ✨<br>
+      Keep shining 🌟
     </p>
   </div>
-  <button onclick="nextSlide()">Back to Start 🔁</button>
+  <button onclick="nextSlide()">Start Again 🔁</button>
 </div>
 
 <script>
