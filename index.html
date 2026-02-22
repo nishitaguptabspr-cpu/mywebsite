@@ -5,14 +5,17 @@
 
 <style>
 body{
-  margin:0;
-  overflow:hidden;
-  background:pink;
-
+margin:0;
+  padding:0;
+  text-align:center;
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(to bottom,#ffe0f0,#ffc0dd);
 
 }
 
 .slide{
+  display=none;
+  padding:25px;
   width:100vw;
   height:100vh;
   flex-shrink:0;
@@ -21,7 +24,8 @@ body{
   align-items:center;
   flex-direction:column;
 
-}
+}active{
+  display:block;
 
 button{
   padding:12px 25px;
@@ -162,6 +166,7 @@ function nextSlide(){
 </body>
 </html>
 </html>
+
 
 
 
