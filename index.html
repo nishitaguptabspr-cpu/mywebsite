@@ -20,7 +20,9 @@ body{
   justify-content:center;
   align-items:center;
 }
-
+overflow:hidden;
+position:relative;
+height:100vh;
 .active{
   display:block;
 }
@@ -94,7 +96,7 @@ h1{
 </audio>
 
 <!-- Slide 1 -->
-<div id="slide1" class="slide active">
+<div class="slide" style="display:flex;">
   <h1>💗 Make A Wish 💗</h1>
   
   <div id="cake" class="cake">🎂</div>
@@ -150,3 +152,4 @@ function nextSlide(){
 </body>
 
 </html>
+
