@@ -2,58 +2,120 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Birthday Slides</title>
+<title>Birthday Surprise</title>
 
 <style>
 body{
   margin:0;
   font-family:Arial, sans-serif;
-  scroll-behavior:smooth;
+  overflow:hidden;
+  background:#ffb6c1;
 }
 
-.section{
+/* Slides */
+.slide{
+  display:none;
   height:100vh;
-  display:flex;
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0;
   justify-content:center;
   align-items:center;
   flex-direction:column;
   text-align:center;
-  color:white;
 }
 
-#slide1{ background:#ff6b81; }
-#slide2{ background:#ff4757; }
-#slide3{ background:#e84393; }
+.slide.active{
+  display:flex;
+}
+
+/* Cake */
+.cake{
+  font-size:80px;
+}
+
+.flame{
+  font-size:40px;
+  animation:flicker 0.5s infinite alternate;
+}
+
+@keyframes flicker{
+  from{ opacity:1; }
+  to{ opacity:0.4; }
+}
 
 button{
   padding:12px 25px;
   border:none;
   border-radius:25px;
-  background:white;
-  color:#e84393;
+  background:#ff1493;
+  color:white;
   font-size:16px;
   margin-top:20px;
+}
+
+/* Photo */
+img{
+  width:200px;
+  border-radius:20px;
+  margin-top:15px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="section" id="slide1">
-  <h1>💖 Make A Wish 💖</h1>
-  <a href="#slide2"><button>Next ➡</button></a>
+<!-- Slide 1 -->
+<div class="slide active">
+  <div class="flame" id="flame">🕯️</div>
+  <div class="cake">🎂</div>
+  <h2>Click to Blow the Candle</h2>
+  <button onclick="blowCandle()">Blow Candle 💨</button>
 </div>
 
-<div class="section" id="slide2">
-  <h1>🎂 Happy Birthday 🎂</h1>
-  <a href="#slide3"><button>Next ➡</button></a>
-</div>
-
-<div class="section" id="slide3">
+<!-- Slide 2 -->
+<div class="slide">
   <h1>🎉 Celebration Time 🎉</h1>
-  <p>You are amazing! Stay happy always ✨</p>
-  <a href="#slide1"><button>Start Again 🔁</button></a>
+  <h2>🎂 Happy Birthday 🎂</h2>
+  <button onclick="nextSlide()">Next ➡</button>
 </div>
+
+<!-- Slide 3 -->
+<div class="slide">
+  <h1>💖 Special Message 💖</h1>
+  <img src="amannnnn.jpg" alt="Birthday Photo">
+  <p>
+    You are amazing 💕 <br>
+    May your life be full of happiness ✨
+  </p>
+  <button onclick="restart()">Start Again 🔁</button>
+</div>
+
+<script>
+let slides = document.querySelectorAll(".slide");
+let current = 0;
+
+function blowCandle(){
+  document.getElementById("flame").style.display="none";
+  setTimeout(function(){
+    nextSlide();
+  },1000);
+}
+
+function nextSlide(){
+  slides[current].classList.remove("active");
+  current++;
+  slides[current].classList.add("active");
+}
+
+function restart(){
+  slides[current].classList.remove("active");
+  current = 0;
+  slides[current].classList.add("active");
+  document.getElementById("flame").style.display="block";
+}
+</script>
 
 </body>
 </html>
